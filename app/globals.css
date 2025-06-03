@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  .neon {
+    --background: 270 50% 8%;
+    --foreground: 280 100% 98%;
+    --card: 270 50% 12%;
+    --card-foreground: 280 100% 98%;
+    --popover: 270 50% 8%;
+    --popover-foreground: 280 100% 98%;
+    --primary: 320 100% 60%;
+    --primary-foreground: 280 100% 98%;
+    --secondary: 270 100% 70%;
+    --secondary-foreground: 270 50% 8%;
+    --muted: 270 50% 15%;
+    --muted-foreground: 280 50% 80%;
+    --accent: 320 100% 60%;
+    --accent-foreground: 280 100% 98%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 280 100% 98%;
+    --border: 320 100% 40%;
+    --input: 270 50% 15%;
+    --ring: 320 100% 60%;
+    --radius: 0.75rem;
+  }
+
+  .ocean {
+    --background: 210 50% 8%;
+    --foreground: 210 100% 98%;
+    --card: 210 50% 12%;
+    --card-foreground: 210 100% 98%;
+    --popover: 210 50% 8%;
+    --popover-foreground: 210 100% 98%;
+    --primary: 200 100% 50%;
+    --primary-foreground: 210 100% 98%;
+    --secondary: 190 100% 60%;
+    --secondary-foreground: 210 50% 8%;
+    --muted: 210 50% 15%;
+    --muted-foreground: 210 50% 80%;
+    --accent: 200 100% 50%;
+    --accent-foreground: 210 100% 98%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 210 100% 98%;
+    --border: 200 100% 40%;
+    --input: 210 50% 15%;
+    --ring: 200 100% 50%;
+  }
+
+  .forest {
+    --background: 120 30% 8%;
+    --foreground: 120 100% 98%;
+    --card: 120 30% 12%;
+    --card-foreground: 120 100% 98%;
+    --popover: 120 30% 8%;
+    --popover-foreground: 120 100% 98%;
+    --primary: 140 100% 40%;
+    --primary-foreground: 120 100% 98%;
+    --secondary: 160 100% 50%;
+    --secondary-foreground: 120 30% 8%;
+    --muted: 120 30% 15%;
+    --muted-foreground: 120 50% 80%;
+    --accent: 140 100% 40%;
+    --accent-foreground: 120 100% 98%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 120 100% 98%;
+    --border: 140 100% 30%;
+    --input: 120 30% 15%;
+    --ring: 140 100% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.theme-wrapper {
+  @apply min-h-screen transition-colors duration-300;
+}
+
+.neon-glow {
+  text-shadow: 0 0 5px theme("colors.purple.400"), 0 0 10px theme("colors.purple.400"), 0 0 15px
+    theme("colors.pink.500"), 0 0 20px theme("colors.pink.500");
+}
+
+.neon-border {
+  box-shadow: 0 0 5px theme("colors.purple.400"), 0 0 10px theme("colors.pink.500");
+}
+
+.neon-button {
+  @apply relative overflow-hidden;
+}
+
+.neon-button::before {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 transition-opacity duration-300;
+}
+
+.neon-button:hover::before {
+  @apply opacity-20;
+}
