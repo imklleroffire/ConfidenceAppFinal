@@ -3,12 +3,12 @@ import { getAuth, connectAuthEmulator } from "firebase/auth"
 import { getFirestore, connectFirestoreEmulator } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: "AIzaSyCwl0F387JBtE-p73nUQ_0-TSMmBtH2Ook",
+  authDomain: "confidence-app-9a91a.firebaseapp.com",
+  projectId: "confidence-app-9a91a",
+  storageBucket: "confidence-app-9a91a.firebasestorage.app",
+  messagingSenderId: "180526214532",
+  appId: "1:180526214532:web:7be883efa151a2def101d1",
 }
 
 // Validate that all required config values are present
